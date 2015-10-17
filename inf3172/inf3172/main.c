@@ -104,6 +104,7 @@ int main(int argc, char *argv[])
     {
       if (argv[0] != NULL)
       {
+          // Il faut implementer les commandes si-desous.. 
         if (!strcmp("lire_fichier", argv[0]))
           cmd_lire(argv[1]);
         else if (!strcmp("ecrire", argv[0]))
