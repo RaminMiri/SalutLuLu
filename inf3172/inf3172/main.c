@@ -91,17 +91,17 @@ int main(int argc, char *argv[]) {
         if (argv != NULL) {
             if (argv[0] != NULL) {
                 // Il faut implementer les commandes si-desous.. 
-                if (!strcmp("lire_fichier", argv[0]))
+                if (strcmp("lire_fichier", argv[0])==0)
                     cmd_lire(argv[1]);
-                else if (!strcmp("ecrire", argv[0]))
+                else if (strcmp("ecrire", argv[0])==0)
                     cmd_ecrire(argv[1]);
-                else if (!strcmp("suppression_fichier", argv[0]))
+                else if (strcmp("suppression_fichier", argv[0])==0)
                     cmd_suppression(argv[1]);
-                else if (!strcmp("creation_repertoire", argv[0]))
+                else if (strcmp("creation_repertoire", argv[0])==0)
                     cmd_mkdir(argv[1]);
-                else if (!strcmp("suppression_repertoire", argv[0]))
+                else if (strcmp("suppression_repertoire", argv[0])==0)
                     cmd_suppdir(argv[1]);
-                else if (!strcmp("fin", argv[0])) {
+                else if (strcmp("fin", argv[0])==0) {
                     fermer();
                     return 0;
                 } else {
