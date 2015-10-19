@@ -16,11 +16,8 @@
 
 
 #define ARG_DELIMS "\n"
-#define BLOCK_SIZE 32
-#define DIR_ENTRY_SIZE 8
-#define DATA_PTR_COUNT 27
-#define MAX_DIR_ENTRIES (BLOCK_SIZE / DIR_ENTRY_SIZE * DATA_PTR_COUNT)
-#define DISKSIZE 32*256
+#define BLOCK_SIZE 8
+#define DISKSIZE 500000
 
 typedef unsigned char byte;
 
@@ -29,7 +26,7 @@ typedef struct _inode
   int _block;
   unsigned int size;
   char type;
-  byte data_blocks[DATA_PTR_COUNT];
+  byte data_blocks[8];
 } inode;
 
 typedef struct _dir_entry
@@ -42,7 +39,7 @@ typedef struct _dir
 {
   int _block;
   unsigned int file_count;
-  dir_entry files[MAX_DIR_ENTRIES];
+  dir_entry files[8];
 } dir;
 
 
